@@ -9,6 +9,7 @@ class Mod(commands.Cog):
         self.bot = bot 
 
     @commands.command()
+    @commands.has_permissions(manage_messages=True)
     async def mute(self, ctx : commands.Context, member : discord.Member, *, reason : str):
         role = discord.utils.get(ctx.guild.roles, name='Muted')
         if role == None:
@@ -30,6 +31,7 @@ class Mod(commands.Cog):
 
 
     @commands.command()
+    @commands.has_permissions(manage_messages=True)
     async def unmute(self, ctx : commands.Context, member : discord.Member):
         role = discord.utils.get(ctx.guild.roles, name='Muted')
         if role == None:

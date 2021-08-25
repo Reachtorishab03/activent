@@ -27,7 +27,7 @@ async def on_ready():
                 bot.load_extension(f'extensions.{filename[:-3]}')
                 print(f"Loaded {filename[:-3]}")
             except Exception as e:
-                print(f'Not able to load {filename[:-3]} extensions \n{e.__name__} : {e}')
+                print(f'Not able to load {filename[:-3]} extension\n{e}')
 
 
 
